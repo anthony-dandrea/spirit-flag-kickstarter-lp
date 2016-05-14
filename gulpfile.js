@@ -1,0 +1,64 @@
+var gulp     = require('gulp'),
+    plugins  = require('gulp-load-plugins')();
+
+// compile scss styling and minfiy
+gulp.task('styles', function() {
+  gulp.src('src/styles/site.scss')
+    .pipe(plugins.sass({
+      includePaths: [
+        './node_modules/normalize-css',
+        './node_modules/breakpoint-sass/stylesheets'
+      ]
+    }).on('error', plugins.sass.logError))
+    .pipe(plugins.cleanCss())
+    .pipe(plugins.autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
+    .pipe(plugins.rename({suffix: '.min'}))
+    .pipe(gulp.dest('dist'));
+});
+
+// move scripts to a single file and minfiy
+// 3rd party libs added here
+gulp.task('scripts', function() {
+  gulp.src([
+      './node_modules/parallax/source/parallax.js',
+      'src/scripts/**/*.js'
+    ])
+    .pipe(plugins.plumber())
+    .pipe(plugins.concat('script.js'))
+    .pipe(plugins.uglify())
+    .pipe(plugins.rename({suffix: '.min'}))
+    .pipe(gulp.dest('dist'))
+});
+
+// compile handlebars partials into html
+// minify rendered html
+gulp.task('templates', function() {
+  gulp.src('src/templates/*.hbs')
+    .pipe(plugins.compileHandlebars({}, {
+      batch: ['./src/templates/partials']
+    }))
+    .pipe(plugins.htmlmin({collapseWhitespace: true}))
+    .pipe(plugins.rename({extname: '.html'}))
+    .pipe(gulp.dest('dist'))
+});
+
+// start server
+// https://www.npmjs.com/package/gulp-serve
+gulp.task('server', plugins.serve({
+  root: ['dist'],
+  port: 8080
+}));
+
+// watch files for change
+gulp.task('watch', function(){
+  gulp.watch('./src/styles/**', ['styles']);
+  gulp.watch('./src/scripts/**', ['scripts']);
+});
+
+// default task: handle assets, start server, watch & reload
+gulp.task('default', ['styles', 'scripts', 'templates', 'server', 'watch']);
+// build task: just build assets with no watch & server
+gulp.task('build', ['styles', 'scripts', 'templates']);
