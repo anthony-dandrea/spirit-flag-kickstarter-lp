@@ -1,0 +1,14 @@
+.video {
+  margin-top: -8%;
+  position: relative;
+  iframe {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 26%;
+    width: 68%;
+    height: 71%;
+  }
+}

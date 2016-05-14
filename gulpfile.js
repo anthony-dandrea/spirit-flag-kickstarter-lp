@@ -28,7 +28,7 @@ gulp.task('scripts', function() {
     ])
     .pipe(plugins.plumber())
     .pipe(plugins.concat('script.js'))
-    .pipe(plugins.uglify())
+    // .pipe(plugins.uglify())
     .pipe(plugins.rename({suffix: '.min'}))
     .pipe(gulp.dest('dist'))
 });
@@ -40,13 +40,20 @@ gulp.task('templates', function() {
     .pipe(plugins.compileHandlebars({}, {
       batch: ['./src/templates/partials']
     }))
-    .pipe(plugins.htmlmin({collapseWhitespace: true}))
+    .pipe(plugins.plumber())
+    .pipe(plugins.htmlmin({collapseWhitespace: true, removeComments: true}))
     .pipe(plugins.rename({extname: '.html'}))
     .pipe(gulp.dest('dist'))
 });
 
-// start server
-// https://www.npmjs.com/package/gulp-serve
+// optimize images
+gulp.task('images', function() {
+  gulp.src('src/images/**/*')
+    .pipe(plugins.imagemin())
+    .pipe(gulp.dest('dist/images'))
+});
+
+// start static file dev server
 gulp.task('server', plugins.serve({
   root: ['dist'],
   port: 8080
@@ -56,9 +63,11 @@ gulp.task('server', plugins.serve({
 gulp.task('watch', function(){
   gulp.watch('./src/styles/**', ['styles']);
   gulp.watch('./src/scripts/**', ['scripts']);
+  gulp.watch('./src/templates/**', ['templates']);
+  gulp.watch('./src/images/**/*', ['images']);
 });
 
 // default task: handle assets, start server, watch & reload
-gulp.task('default', ['styles', 'scripts', 'templates', 'server', 'watch']);
+gulp.task('default', ['styles', 'scripts', 'templates', 'images', 'server', 'watch']);
 // build task: just build assets with no watch & server
-gulp.task('build', ['styles', 'scripts', 'templates']);
+gulp.task('build', ['styles', 'scripts', 'templates', 'images']);

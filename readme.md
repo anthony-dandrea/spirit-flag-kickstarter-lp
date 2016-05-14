@@ -12,3 +12,13 @@ Following directions assume you're on [OSX](http://brew.sh/) with Homebrew insta
 - Vanilla JS (no JQuery)
 - Normalize being wrapped into css bundle
 - [Head info](https://github.com/joshbuchea/HEAD)
+
+## Todo
+- Share copy, url and image for sharing
+- No way to share instagram but can follow
+- Need favicon 32x32 pixels
+- Need meta tag info: description, keywords, title
+Optimizations if you want/care:
+- Keys in discount code image to be broken out. Right now just a big image.
+- Bottom "click here now" will need to be broken out into more layers unless you just want it a big image.
+- Parallax is going to be really minimal unless there are layers to the people. Right now they are one flat layer.

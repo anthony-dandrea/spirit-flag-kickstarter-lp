@@ -6,6 +6,21 @@ html {
   box-sizing: inherit;
 }
 
+a:focus {
+  outline: none;
+}
+
 body {
   background: $black;
+  color: $white;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+.container {
+  margin: auto;
+  max-width: $containerWidth;
+  padding: 0.5em;
 }
