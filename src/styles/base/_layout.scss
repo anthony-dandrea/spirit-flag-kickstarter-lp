@@ -13,6 +13,9 @@ a:focus {
 body {
   background: $black;
   color: $white;
+  // overflow-x: hidden;
+  position: relative;
+  // float: left;
 }
 
 img {
@@ -23,4 +26,6 @@ img {
   margin: auto;
   max-width: $containerWidth;
   padding: 0.5em;
+  position: relative;
+  z-index: 3;
 }

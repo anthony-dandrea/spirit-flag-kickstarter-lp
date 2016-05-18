@@ -20,3 +20,12 @@ Following directions assume you're on [OSX](http://brew.sh/) with Homebrew insta
 - No way to share instagram but can follow
 - Need favicon 32x32 pixels
 - Need meta tag info: description, keywords, title
+
+## Feedback
+Here is a rundown of how things should work:
+X1. Nothing is parallax besides the background
+2. Look through the photoshop file to see the different messages for social media sharing. I have made progress change the text and font color.
+3. Hovering over the Kickstarter Button should give it a white glow
+4. I will make the canned messages for all of the sharing and add it separately as a word doc.
+5. The green play button and "SpiritFlags" in the middle should go away after the video starts.
+6. If you add any additional "finesse", try to make the progress bar do something cool.

@@ -3,7 +3,6 @@
 
 // Tracks social media shares to unlock discount code
 (function() {
-  var socialAll = ['twitter', 'facebook', 'pinterest', 'instagram', 'email'];
   var socialComplete = localStorage.socialComplete ? localStorage.getItem('socialComplete').split(',') : [];
   function updateSocialComplete(e) {
     // add new social to list
@@ -18,7 +17,7 @@
     checkForComplete(false);
   }
   function checkForComplete(sendEvt) {
-    if (socialComplete.length === socialAll.length) {
+    if (socialComplete.length >= 4) {
       // complete
       document.querySelectorAll('.unlocked')[0].classList.add('active');
       document.querySelectorAll('[data-discount-code]')[0].innerHTML = 'TESTCODE';

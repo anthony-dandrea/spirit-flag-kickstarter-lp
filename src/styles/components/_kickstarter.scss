@@ -1,6 +1,25 @@
 .kickstarter {
   a {
+    position: relative;
     display: block;
+    max-width: 800px;
     margin: auto;
+  }
+  img {
+    margin: auto;
+    display: block;
+    position: relative;
+    z-index: 3;
+  }
+  .copy {
+    color: $green;
+    font-family: $FontRachel;
+    text-align: right;
+    position: absolute;
+    font-size: 2em;
+    top: -20px;
+    right: 11%;
+    margin: 0;
+    z-index: 2;
   }
 }

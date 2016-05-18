@@ -1,0 +1,20 @@
+.parallax-container {
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
+}
+
+// parallax bg
+.parallax-bg {
+  min-height: 100vh;
+  height: 100%;
+  width: 100vw;
+  // top:0;
+  // left:0;
+  // right: 0;
+  // bottom: 0;
+  z-index: 1;
+  display: table;
+  background-image: url('images/starbackground.jpg');
+  position: absolute;
+}

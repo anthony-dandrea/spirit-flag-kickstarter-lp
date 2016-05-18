@@ -1,0 +1,25 @@
+.header-callout {
+  margin: 2em auto;
+  .quote {
+    width: 75%;
+    background: $black;
+    border: 2px solid $green;
+    padding: 0.5em;
+    position: relative;
+  }
+  h3 {
+    font-family: $FontRachel;
+    font-size: 1.8em;
+    font-weight: normal;
+    text-align: justify;
+    padding: 0 1em;
+    line-height: 1.3em;
+    letter-spacing: 0.1em;
+  }
+  .cat {
+    max-width: 32%;
+    left: 100%;
+    top: 10%;
+    position: absolute;
+  }
+}
