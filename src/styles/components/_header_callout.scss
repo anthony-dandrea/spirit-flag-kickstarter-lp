@@ -1,25 +1,42 @@
+$header-callout-brkpt: $medium;
+
 .header-callout {
-  margin: 2em auto;
+  margin: 1em auto;
+  @include breakpoint($header-callout-brkpt) {
+    margin: 2em auto;
+  }
   .quote {
-    width: 75%;
+    width: 100%;
     background: $black;
     border: 2px solid $green;
     padding: 0.5em;
     position: relative;
+    @include breakpoint($header-callout-brkpt) {
+      width: 80%;
+    }
   }
   h3 {
     font-family: $FontRachel;
-    font-size: 1.8em;
+    font-size: 1.2em;
     font-weight: normal;
-    text-align: justify;
-    padding: 0 1em;
+    padding: 0 0.3em;
     line-height: 1.3em;
     letter-spacing: 0.1em;
+    text-align: center;
+    @include breakpoint($header-callout-brkpt) {
+      font-size: 1.8em;
+      padding: 0 1em;
+      text-align: left;
+    }
   }
   .cat {
     max-width: 32%;
     left: 100%;
-    top: 10%;
+    top: 0;
     position: absolute;
+    display: none;
+    @include breakpoint($header-callout-brkpt) {
+      display: block;
+    }
   }
 }

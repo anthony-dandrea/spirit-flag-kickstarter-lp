@@ -8,11 +8,8 @@
 .parallax-bg {
   min-height: 100vh;
   height: 100%;
-  width: 100vw;
-  // top:0;
-  // left:0;
-  // right: 0;
-  // bottom: 0;
+  width: 200vw;
+  left: -50vw;
   z-index: 1;
   display: table;
   background-image: url('images/starbackground.jpg');

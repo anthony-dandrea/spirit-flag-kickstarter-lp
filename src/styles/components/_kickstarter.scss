@@ -1,15 +1,27 @@
 .kickstarter {
+  padding: 4em 0;
   a {
     position: relative;
     display: block;
     max-width: 800px;
     margin: auto;
   }
-  img {
+  .btn {
     margin: auto;
     display: block;
     position: relative;
     z-index: 3;
+  }
+  .arrow {
+    position: absolute;
+    top: 29%;
+    left: 96%;
+    z-index: 4;
+    width: 15%;
+  }
+  a:hover .btn {
+    border-color: $glowBlue;
+    box-shadow: 0 0 43px $glowBlue;
   }
   .copy {
     color: $green;

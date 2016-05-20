@@ -4,6 +4,9 @@
 // Tracks social media shares to unlock discount code
 (function() {
   var socialComplete = localStorage.socialComplete ? localStorage.getItem('socialComplete').split(',') : [];
+  var socialStatus = document.getElementById('social-status');
+  var socialBar = document.getElementById('social-bar');
+  var minAmount = 4;
   function updateSocialComplete(e) {
     // add new social to list
     var attr = e.getAttribute('data-social');
@@ -17,16 +20,22 @@
     checkForComplete(false);
   }
   function checkForComplete(sendEvt) {
-    if (socialComplete.length >= 4) {
-      // complete
-      document.querySelectorAll('.unlocked')[0].classList.add('active');
-      document.querySelectorAll('[data-discount-code]')[0].innerHTML = 'TESTCODE';
+    if (socialComplete.length >= minAmount) {
+      
+      // update progress bar
+      socialBar.style.width = '100%';
       // Send GA event
       if (window.location.hostname === 'localhost' || sendEvt) {
         console.log('GA TEST', 'send', 'event', 'social', 'btnclick', 'AllSocialClicked');
       } else {
         ga('send', 'event', 'social', 'btnclick', 'AllSocialClicked');
       }
+    } else {
+      debugger;
+      // update progress text
+      socialStatus.innerHTML = 'progress (' + socialComplete.length + '/' + minAmount + ')... ';
+      // update progress bar
+      socialBar.style.width = minAmount / socialComplete.length * 100 + '%';
     }
   }
   // Run checkForComplete on load

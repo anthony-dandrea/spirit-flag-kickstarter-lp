@@ -1,4 +1,36 @@
-.social {
+.social-callout {
+  text-align: center;
+  padding: 3em 0 1.5em;
+  position: relative;
+  .callout {
+    display: inline-block;
+    margin: auto;
+  }
+  .red {
+    color: $red;
+    font-family: $FontRachel;
+    font-size: 3.3em;
+    @include stroke(5, $white);
+  }
+  .green {
+    color: $greenLight;
+  }
+  .note {
+    margin-top: 0.5em;
+    font-size: 1.2em;
+    display: block;
+    text-align: right;
+    font-family: $FontConsole;
+  }
+  .green-arrow {
+    position: absolute;
+    left: 100%;
+    top: 45%;
+    height: 200px;
+  }
+}
+
+.social-icons {
   display: flex;
   list-style-type: none;
   margin: 1em auto;
@@ -33,5 +65,32 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+.social-progress {
+  text-align: center;
+  background: #171717;
+  font-family: $FontConsole;
+  border: solid 1px $green;
+  position: relative;
+  p {
+    position: relative;
+    z-index: 4;
+    color: #777777;
+    margin: 0.5em auto;
+  }
+  .social-bar {
+    z-index: 3;
+    background-color: $green;
+    opacity: 0.3;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 1s;
+  }
+  span {
+    color: $green;
   }
 }
