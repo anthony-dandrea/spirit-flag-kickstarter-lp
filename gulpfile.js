@@ -28,7 +28,7 @@ gulp.task('scripts', function() {
     ])
     .pipe(plugins.plumber())
     .pipe(plugins.concat('script.js'))
-    // .pipe(plugins.uglify())
+    .pipe(plugins.uglify())
     .pipe(plugins.rename({suffix: '.min'}))
     .pipe(gulp.dest('dist'))
 });

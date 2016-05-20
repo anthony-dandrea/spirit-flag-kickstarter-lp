@@ -9,8 +9,15 @@
   .red {
     color: $red;
     font-family: $FontRachel;
-    font-size: 3.3em;
-    @include stroke(5, $white);
+    @include stroke(3, $white);
+    font-size: 1.8em;
+    @include breakpoint($small) {
+      @include stroke(5, $white);
+      font-size: 2.3em;
+    }
+    @include breakpoint($medium) {
+      font-size: 3.3em;
+    }
   }
   .green {
     color: $greenLight;
@@ -27,6 +34,10 @@
     left: 100%;
     top: 45%;
     height: 200px;
+    display: none;
+    @include breakpoint(1300px) {
+      display: block;
+    }
   }
 }
 
@@ -36,6 +47,9 @@
   margin: 1em auto;
   padding: 0;
   justify-content: space-between;
+  li {
+    width: 15%;
+  }
   a {
     display: block;
   }
@@ -79,6 +93,7 @@
     z-index: 4;
     color: #777777;
     margin: 0.5em auto;
+    line-height: 1.2em;
   }
   .social-bar {
     z-index: 3;

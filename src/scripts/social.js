@@ -7,6 +7,7 @@
   var socialStatus = document.getElementById('social-status');
   var socialBar = document.getElementById('social-bar');
   var minAmount = 4;
+  var dc = 'TESTCODE';
   function updateSocialComplete(e) {
     // add new social to list
     var attr = e.getAttribute('data-social');
@@ -21,21 +22,25 @@
   }
   function checkForComplete(sendEvt) {
     if (socialComplete.length >= minAmount) {
-      
+      // update progress text
+      socialStatus.innerHTML = 'Thank you! Your discount code is <span>'+dc+'</span>';
       // update progress bar
       socialBar.style.width = '100%';
       // Send GA event
-      if (window.location.hostname === 'localhost' || sendEvt) {
+      if (window.isTesting || sendEvt) {
         console.log('GA TEST', 'send', 'event', 'social', 'btnclick', 'AllSocialClicked');
       } else {
         ga('send', 'event', 'social', 'btnclick', 'AllSocialClicked');
       }
     } else {
-      debugger;
+      // template with variables to replace
+      var template = "<span>progress ({{length}}/"+minAmount+")...</span> {{left}} more shares until we're best friends";
+      template = template.replace('{{length}}', socialComplete.length);
+      template = template.replace('{{left}}', minAmount - socialComplete.length);
       // update progress text
-      socialStatus.innerHTML = 'progress (' + socialComplete.length + '/' + minAmount + ')... ';
+      socialStatus.innerHTML = template;
       // update progress bar
-      socialBar.style.width = minAmount / socialComplete.length * 100 + '%';
+      socialBar.style.width = socialComplete.length ? socialComplete.length / minAmount * 100 + '%' : '0%';
     }
   }
   // Run checkForComplete on load

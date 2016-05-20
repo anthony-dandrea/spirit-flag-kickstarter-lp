@@ -6,20 +6,30 @@
   position: relative;
   text-align: center;
   background: $black;
-  padding: 2em 0;
+  padding: 2em 0 0;
+  @include breakpoint($small) {
+    padding: 2em 0;
+  }
   .video-container {
     margin: auto;
     max-width: $containerWidth;
-    background-image: url('images/videoborder.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center center;;
     position: relative;
+    @include breakpoint($small) {
+      background-image: url('images/videoborder.png');
+    }
   }
   iframe {
-    padding: 6%;
-    height: 500px;
-    width: 75%;
+    padding: 1em 0 1em;
+    height: 300px;
+    width: 90%;
+    @include breakpoint($small) {
+      padding: 6%;
+      width: 75%;
+      height: 500px;
+    }
   }
   .headline {
     text-transform: uppercase;
@@ -27,7 +37,7 @@
     font-family: $FontRachel;
     font-size: 2em;
     position: absolute;
-    right: 250px;
+    right: 9%;
     top: -45px;
     display: block;
   }

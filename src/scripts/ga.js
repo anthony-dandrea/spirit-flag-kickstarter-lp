@@ -1,3 +1,6 @@
+// global isTesting variable
+window.isTesting = window.location.hostname === 'localhost' || window.location.hostname === 'anthony-dandrea.github.io' ? true : false;
+
 // GA init
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -15,7 +18,7 @@ ga('send', 'pageview');
   for (var i = 0; i < eventElements.length; i++) {
     var elem = eventElements[i];
     elem.addEventListener('click', function(e) {
-      if (window.location.hostname === 'localhost') {
+      if (window.isTesting) {
         console.log('GA TEST', 'send', 'event', this.getAttribute('data-ga-category'), 'btnclick', this.getAttribute('data-ga'));
       } else {
         ga('send', 'event', e.target.getAttribute('data-ga-category'), 'btnclick', e.target.getAttribute('data-ga'));
