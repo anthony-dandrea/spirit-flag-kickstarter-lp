@@ -1,6 +1,7 @@
 // Box-sizing
 html {
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -15,7 +16,6 @@ body {
   color: $white;
   overflow-x: hidden;
   position: relative;
-  // float: left;
 }
 
 img {
