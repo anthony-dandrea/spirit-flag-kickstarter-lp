@@ -17,6 +17,6 @@
   window.addEventListener('resize', setHeight);
   document.addEventListener('DOMContentLoaded', setHeight);
   setTimeout(setHeight, 500);
-  setTimeout(setHeight, 1000);
+  setInterval(setHeight, 1000);
   setHeight();
 })();
