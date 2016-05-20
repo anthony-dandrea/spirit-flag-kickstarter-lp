@@ -17,22 +17,23 @@ $header-callout-brkpt: $medium;
   }
   h3 {
     font-family: $FontRachel;
-    font-size: 1.2em;
+    font-size: 1.4em;
     font-weight: normal;
-    padding: 0 0.3em;
+    padding: 0.4em 0.3em;
+    margin: 0;
     line-height: 1.3em;
     letter-spacing: 0.1em;
     text-align: center;
     @include breakpoint($header-callout-brkpt) {
       font-size: 1.8em;
-      padding: 0 1em;
+      padding: 0.4em 1em;
       text-align: left;
     }
   }
   .cat {
     max-width: 32%;
     left: 100%;
-    top: 0;
+    top: -32%;
     position: absolute;
     display: none;
     @include breakpoint($header-callout-brkpt) {

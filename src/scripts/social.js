@@ -1,5 +1,5 @@
 // reset for dev
-// localStorage.removeItem('socialComplete');
+localStorage.removeItem('socialComplete');
 
 // Tracks social media shares to unlock discount code
 (function() {
@@ -7,7 +7,7 @@
   var socialStatus = document.getElementById('social-status');
   var socialBar = document.getElementById('social-bar');
   var minAmount = 4;
-  var dc = 'TESTCODE';
+  // var dc = 'TESTCODE';
   function updateSocialComplete(e) {
     // add new social to list
     var attr = e.getAttribute('data-social');
@@ -21,9 +21,10 @@
     checkForComplete(false);
   }
   function checkForComplete(sendEvt) {
-    if (socialComplete.length >= minAmount) {
+    var len = socialComplete.length;
+    if (len >= minAmount) {
       // update progress text
-      socialStatus.innerHTML = 'Thank you! Your discount code is <span>'+dc+'</span>';
+      socialStatus.innerHTML = 'THANK YOU SO MUCH! Enter your email below for <span>a free hat</span>!';
       // update progress bar
       socialBar.style.width = '100%';
       // Send GA event
@@ -33,14 +34,19 @@
         ga('send', 'event', 'social', 'btnclick', 'AllSocialClicked');
       }
     } else {
-      // template with variables to replace
-      var template = "<span>progress ({{length}}/"+minAmount+")...</span> {{left}} more shares until we're best friends";
-      template = template.replace('{{length}}', socialComplete.length);
-      template = template.replace('{{left}}', minAmount - socialComplete.length);
+      // create template
+      var template = "<span>progress (0/"+minAmount+")...</span> four more shares until we're best friends";
+      if (len === 1) {
+        template = "<span>progress (1/"+minAmount+")...</span> three more shares until we become astronauts";
+      } else if (len === 2) {
+        template = "<span>progress (2/"+minAmount+")...</span> two more shares until Adam Sandler is funny again";
+      } else if (len === 3) {
+       template = "<span>progress (3/"+minAmount+")...</span> one more shares until cats rule the world";
+      }
       // update progress text
       socialStatus.innerHTML = template;
       // update progress bar
-      socialBar.style.width = socialComplete.length ? socialComplete.length / minAmount * 100 + '%' : '0%';
+      socialBar.style.width = len ? len / minAmount * 100 + '%' : '0%';
     }
   }
   // Run checkForComplete on load

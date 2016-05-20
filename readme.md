@@ -28,4 +28,4 @@ X1. Nothing is parallax besides the background
 X3. Hovering over the Kickstarter Button should give it a white glow
 4. I will make the canned messages for all of the sharing and add it separately as a word doc.
 5. The green play button and "SpiritFlags" in the middle should go away after the video starts.
-6. If you add any additional "finesse", try to make the progress bar do something cool.
+X6. If you add any additional "finesse", try to make the progress bar do something cool.

@@ -1,7 +1,10 @@
 .social-callout {
   text-align: center;
-  padding: 3em 0 1.5em;
+  padding: 2.6em 0 1em;
   position: relative;
+  @include breakpoint($small) {
+    padding: 3em 0 1.5em;
+  }
   .callout {
     display: inline-block;
     margin: auto;
@@ -24,10 +27,13 @@
   }
   .note {
     margin-top: 0.5em;
-    font-size: 1.2em;
+    font-size: 1em;
     display: block;
     text-align: right;
     font-family: $FontConsole;
+    @include breakpoint($small) {
+      font-size: 1.2em;
+    }
   }
   .green-arrow {
     position: absolute;
@@ -91,6 +97,7 @@
   p {
     position: relative;
     z-index: 4;
+    padding: 0 0.2em;
     color: #777777;
     margin: 0.5em auto;
     line-height: 1.2em;
