@@ -1,5 +1,5 @@
 // reset for dev
-localStorage.removeItem('socialComplete');
+// localStorage.removeItem('socialComplete');
 
 // Tracks social media shares to unlock discount code
 (function() {
@@ -33,6 +33,8 @@ localStorage.removeItem('socialComplete');
       } else {
         ga('send', 'event', 'social', 'btnclick', 'AllSocialClicked');
       }
+      // add done class
+      socialStatus.classList.add('done');
     } else {
       // create template
       var template = "<span>progress (0/"+minAmount+")...</span> four more shares until we're best friends";

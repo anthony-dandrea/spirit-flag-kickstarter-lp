@@ -105,14 +105,27 @@
   .social-bar {
     z-index: 3;
     background-color: $green;
-    opacity: 0.3;
+    opacity: 0.2;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
     transition: all 1s;
+    animation: pulse 2s ease infinite alternate;
   }
   span {
     color: $green;
+  }
+  .done span {
+    color: #71ff00;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    background-color: #2F312E;
+  }
+  50% {
+    background-color: $green;
   }
 }
