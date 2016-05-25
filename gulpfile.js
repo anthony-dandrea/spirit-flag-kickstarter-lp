@@ -77,8 +77,8 @@ gulp.task('paths', function() {
   gulp.src(['dist/site.min.css'])
     .pipe(plugins.replace("fonts/Rachelhand.ttf", "'{{ 'Rachelhand.ttf' | asset_url }}'"))
     .pipe(plugins.replace("fonts/ColorsOfAutumn.ttf", "'{{ 'ColorsOfAutumn.ttf' | asset_url }}'"))
-    .pipe(plugins.replace("images/videoborder.png", "'{{ 'videoborder.png' | asset_url }}'"))
-    .pipe(plugins.replace("images/starbackground.jpg", "'{{ 'starbackground.jpg' | asset_url }}'"))
+    .pipe(plugins.replace("images/videoborder.png", "videoborder.png"))
+    .pipe(plugins.replace("images/starbackground.jpg", "starbackground.jpg"))
     .pipe(gulp.dest('dist_shopify/'));
 });
 
