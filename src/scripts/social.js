@@ -7,7 +7,7 @@
   var socialStatus = document.getElementById('social-status');
   var socialBar = document.getElementById('social-bar');
   var minAmount = 4;
-  // var dc = 'TESTCODE';
+  var dc = 'TESTCODE';
   function updateSocialComplete(e) {
     // add new social to list
     var attr = e.getAttribute('data-social');
@@ -24,7 +24,7 @@
     var len = socialComplete.length;
     if (len >= minAmount) {
       // update progress text
-      socialStatus.innerHTML = 'THANK YOU SO MUCH! Enter your email below for <span>a free hat</span>!';
+      socialStatus.innerHTML = 'THANK YOU SO MUCH! Your coupon code is <span>'+dc+'</span>!';
       // update progress bar
       socialBar.style.width = '100%';
       // Send GA event
