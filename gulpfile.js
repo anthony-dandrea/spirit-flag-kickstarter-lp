@@ -50,7 +50,7 @@ gulp.task('templates', function() {
 gulp.task('images', function() {
   gulp.src('src/images/**/*')
     .pipe(plugins.imagemin())
-    .pipe(gulp.dest('dist/images'))
+    .pipe(gulp.dest('dist/images'));
 });
 
 // start static file dev server
@@ -60,14 +60,31 @@ gulp.task('server', plugins.serve({
 }));
 
 // watch files for change
-gulp.task('watch', function(){
+gulp.task('watch', function() {
   gulp.watch('./src/styles/**', ['styles']);
   gulp.watch('./src/scripts/**', ['scripts']);
   gulp.watch('./src/templates/**', ['templates']);
   gulp.watch('./src/images/**/*', ['images']);
 });
 
+// replace paths with something like: {{ 'foo.png' | asset_url }}
+gulp.task('paths', function() {
+  gulp.src(['dist/index.html'])
+    .pipe(plugins.replace(/([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif|css|js))/g, "{{ '$1' | asset_url }}"))
+    .pipe(plugins.replace('images/social/', ''))
+    .pipe(plugins.replace('images/', ''))
+    .pipe(gulp.dest('dist_shopify/'));
+  gulp.src(['dist/site.min.css'])
+    .pipe(plugins.replace("fonts/Rachelhand.ttf", "'{{ 'Rachelhand.ttf' | asset_url }}'"))
+    .pipe(plugins.replace("fonts/ColorsOfAutumn.ttf", "'{{ 'ColorsOfAutumn.ttf' | asset_url }}'"))
+    .pipe(plugins.replace("images/videoborder.png", "'{{ 'videoborder.png' | asset_url }}'"))
+    .pipe(plugins.replace("images/starbackground.jpg", "'{{ 'starbackground.jpg' | asset_url }}'"))
+    .pipe(gulp.dest('dist_shopify/'));
+});
+
+gulp.task('shopfiy', ['paths']);
 // default task: handle assets, start server, watch & reload
 gulp.task('default', ['styles', 'scripts', 'templates', 'images', 'server', 'watch']);
 // build task: just build assets with no watch & server
 gulp.task('build', ['styles', 'scripts', 'templates', 'images']);
+// shopfiy task: just build assets with no watch & server
