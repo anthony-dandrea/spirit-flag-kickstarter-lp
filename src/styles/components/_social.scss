@@ -93,6 +93,8 @@
   background: #171717;
   font-family: $FontConsole;
   border: solid 1px $green;
+  border-radius: 5px;
+  box-shadow: 0 0 25px lighten($green, 10%);
   position: relative;
   p {
     position: relative;

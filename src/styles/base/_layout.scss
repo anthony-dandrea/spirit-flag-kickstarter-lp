@@ -7,6 +7,10 @@ html {
   box-sizing: inherit;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 a:focus {
   outline: none;
 }
@@ -14,7 +18,7 @@ a:focus {
 body {
   background: $black;
   color: $white;
-  overflow-x: hidden;
+  overflow: hidden;
   position: relative;
 }
 
