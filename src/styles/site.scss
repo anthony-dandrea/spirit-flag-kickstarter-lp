@@ -11,15 +11,16 @@
 @import 'base/mixins';
 @import 'base/layout';
 @import 'base/typography';
+@import 'base/extends';
 
 ///////////////////////////
 // Import components
 ///////////////////////////
 @import 'components/parallax';
 @import 'components/header_callout';
-// @import 'components/logo';
 @import 'components/video';
 @import 'components/social';
-// @import 'components/unlock';
 @import 'components/kickstarter';
 @import 'components/bot_links';
+@import 'components/media';
+@import 'components/press';
