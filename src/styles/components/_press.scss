@@ -29,7 +29,14 @@
 
 .people {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  @include breakpoint($media-breakpoint) {
+    flex-direction: row;
+  }
+  img {
+    max-height: 200px;
+  }
   > div {
     padding: 1em;
     width: 95%;
