@@ -14,3 +14,5 @@ Following directions assume you're on [OSX](http://brew.sh/) with Homebrew insta
 - Normalize being wrapped into css bundle
 - [Head info](https://github.com/joshbuchea/HEAD)
 - To push to [gh-pages](http://anthony-dandrea.github.io/spirit-flag-kickstarter-lp/) `git subtree push --prefix dist origin gh-pages`
+- [prod LP](http://thatshirtwascash.com/pages/spiritflags) [prod press](http://thatshirtwascash.com/pages/spiritflagspress)
+- Share url img link https://cdn.shopify.com/s/files/1/0537/4221/t/7/assets/spiritflagscover.jpg

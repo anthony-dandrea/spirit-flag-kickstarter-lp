@@ -24,7 +24,7 @@
     var len = socialComplete.length;
     if (len >= minAmount) {
       // update progress text
-      socialStatus.innerHTML = 'THANK YOU SO MUCH! Your coupon code is <span>'+dc+'</span>!';
+      socialStatus.innerHTML = 'THANK YOU SO MUCH! Your coupon code is <span>'+dc+'</span> for 10% off!';
       // update progress bar
       socialBar.style.width = '100%';
       // Send GA event

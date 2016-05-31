@@ -68,8 +68,9 @@ gulp.task('watch', function() {
 });
 
 // replace paths with something like: {{ 'foo.png' | asset_url }}
+// {% layout none %}
 gulp.task('paths', function() {
-  gulp.src(['dist/index.html'])
+  gulp.src(['dist/index.html', 'dist/press.html'])
     .pipe(plugins.replace(/([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif|css|js|zip))/g, "{{ '$1' | asset_url }}"))
     .pipe(plugins.replace('images/social/', ''))
     .pipe(plugins.replace('images/', ''))
