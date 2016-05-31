@@ -70,7 +70,7 @@ gulp.task('watch', function() {
 // replace paths with something like: {{ 'foo.png' | asset_url }}
 gulp.task('paths', function() {
   gulp.src(['dist/index.html'])
-    .pipe(plugins.replace(/([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif|css|js))/g, "{{ '$1' | asset_url }}"))
+    .pipe(plugins.replace(/([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif|css|js|zip))/g, "{{ '$1' | asset_url }}"))
     .pipe(plugins.replace('images/social/', ''))
     .pipe(plugins.replace('images/', ''))
     .pipe(gulp.dest('dist_shopify/'));
