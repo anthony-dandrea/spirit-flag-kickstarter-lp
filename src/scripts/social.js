@@ -7,7 +7,7 @@
   var socialStatus = document.getElementById('social-status');
   var socialBar = document.getElementById('social-bar');
   var minAmount = 4;
-  var dc = 'SpiritFlagFam';
+  var dc = 'SPIRITFLAG-24D9';
   function updateSocialComplete(e) {
     // add new social to list
     var attr = e.getAttribute('data-social');
