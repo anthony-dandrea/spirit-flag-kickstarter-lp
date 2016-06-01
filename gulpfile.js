@@ -71,7 +71,7 @@ gulp.task('watch', function() {
 // {% layout none %}
 gulp.task('paths', function() {
   gulp.src(['dist/index.html', 'dist/press.html'])
-    .pipe(plugins.replace(/([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif|css|js|zip))/g, "{{ '$1' | asset_url }}"))
+    .pipe(plugins.replace(/([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif|css|js|zip|pdf))/g, "{{ '$1' | asset_url }}"))
     .pipe(plugins.replace('images/social/', ''))
     .pipe(plugins.replace('images/', ''))
     .pipe(gulp.dest('dist_shopify/'));
