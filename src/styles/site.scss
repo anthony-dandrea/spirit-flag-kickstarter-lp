@@ -1,8 +1,8 @@
 ///////////////////////////
 // Import libs
 ///////////////////////////
-@import 'normalize';
-@import 'breakpoint';
+// @import 'normalize';
+// @import 'breakpoint';
 
 ///////////////////////////
 // Import base
@@ -11,16 +11,12 @@
 @import 'base/mixins';
 @import 'base/layout';
 @import 'base/typography';
-@import 'base/extends';
+
+// General
+@import 'components/layout';
 
 ///////////////////////////
 // Import components
 ///////////////////////////
-@import 'components/parallax';
-@import 'components/header_callout';
-@import 'components/video';
-@import 'components/social';
-@import 'components/kickstarter';
-@import 'components/bot_links';
-@import 'components/media';
-@import 'components/press';
+@import 'components/header';
+@import 'components/footer';

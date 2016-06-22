@@ -1,3 +1,11 @@
+@mixin breakpoint($bk1, $bk2: false) {
+  @if $bk2 {
+    @media (max-width: #{$bk1}) and (min-width: #{$bk2}) { @content; }
+  } @else {
+    @media (max-width: #{$bk1}) { @content; }
+  }
+}
+
 @function stroke($stroke, $color) {
   $shadow: ();
   $from: $stroke*-1;

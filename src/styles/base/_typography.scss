@@ -1,33 +1,32 @@
 @font-face {
-    font-family: 'ColorsOfAutumn';
-    src: url('fonts/ColorsOfAutumn.ttf'),
-         url('fonts/ColorsOfAutumn.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Knockout';
+  src: url('fonts/Knockout-30.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Verlag';
+  src: url('fonts/Verlag-Book.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'Rachelhand';
-    src: url('fonts/Rachelhand.ttf'),
-         url('fonts/Rachelhand.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Verlag';
+  src: url('fonts/Verlag-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
 }
 
-// @font-face {
-//   font-family: 'colors_of_autumnregular';
-//   src: url('colorsofautumn-webfont.woff2') format('woff2'),
-//        url('colorsofautumn-webfont.woff') format('woff');
-//   font-weight: normal;
-//   font-style: normal;
-// }
-// @font-face {
-//   font-family: 'rachelhandmedium';
-//   src: url('rachelhand-webfont.woff2') format('woff2'),
-//        url('rachelhand-webfont.woff') format('woff');
-//   font-weight: normal;
-//   font-style: normal;
-// }
-
-$FontConsole: "Lucida Console", Monaco, monospace;
-$FontAutumn: 'ColorsOfAutumn';
-$FontRachel: 'Rachelhand';
+@font-face {
+  font-family: 'VerlagCond';
+  src: url('fonts/VerlagCond-Black.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'VerlagCond';
+  src: url('fonts/VerlagCond-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}

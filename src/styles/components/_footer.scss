@@ -1,0 +1,58 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  @include breakpoint($small) {
+    flex-direction: column;
+  }
+  > div, .footer-feedback {
+    width: 15%;
+    @include breakpoint($small) {
+      width: 100%;
+    }
+    a {
+    color: #000;
+    display: block;
+    text-decoration: none;
+      &:hover {
+        color: lighten(#000, 15%);
+      }
+    }
+  }
+  h5 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+  }
+  .footer-feedback {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    padding: 1em;
+    &:hover {
+      background: grey;
+    }
+  }
+}
+.footer-feedback {
+  border: solid 1px #000;
+}
+
+.footer-legal-links {
+  text-align: center;
+  a {
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+    padding: 2px 10px;
+    margin: 3em 0;
+    border-right: solid 1px #000;
+    &:last-of-type {
+      border-right: none;
+    }
+  }
+}
+
+// see below for sprite
+// http://www.6pm.com/womens-shoes~1gp?s=recentSalesStyle/desc&pf_rd_r=1ZWHBDD1MQENEF3Y77VF&pf_rd_p=3f12ddc2-4664-4496-8e6e-d1b95bae2593
+.footer-bot-copy {
+  text-align: center;
+}
