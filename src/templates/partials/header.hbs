@@ -2,18 +2,20 @@
   <div class="refresh-container">
     <div class="header-top">
       <div class="logo">
-        <img src="http://placehold.it/150x80" />
+        {{> 'logo'}}
       </div>
       <div class="banner">
-        <p>Free shipping any 2* Items or $50+</p>
+        <p><span class="red">Free shipping</span> any 2* Items or $50+</p>
       </div>
-      <div class="phone">
-        <p>
-          1.888.676.2660
-        </p>
-        <p class="time">
-          6AM - 8PM PST
-        </p>
+      <div class="phone-callout">
+        <div>
+          <p  class="phone">
+            1.888.676.2660
+          </p>
+          <p class="time">
+            6AM - 8PM PST
+          </p>
+        </div>
       </div>
       <div class="icons">
         <a href="/account" title="Account"></a>
@@ -21,5 +23,59 @@
         <a href="/cart" title="Shopping Bag"></a>
       </div>
     </div>
+    <nav class="header-nav">
+      <ul>
+        <li class="default-show">
+          <a href="#">Search</a>
+          <div class="header-dropdown">
+            <div class="refresh-container">
+              <form action="/search" method="get" class="nav-search-form">
+                <fieldset>
+                  <button type="submit" tabindex="2">
+                    <i class="fa fa-search"></i>
+                  </button>
+                  <input type="hidden" name="department">
+                  <input id="globalSearchField" type="search" tabindex="1" name="term" class="entire-search" placeholder="shoes, dresses, sale, clearance" autocomplete="off">
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="/shoes">Shoes</a>
+          <div class="header-dropdown">
+            <div class="refresh-container">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="/clothing">Clothing</a>
+        </li>
+        <li>
+          <a href="/bags">Bags</a>
+        </li>
+        <li>
+          <a href="/accessories">Accessories</a>
+        </li>
+        <li>
+          <a href="/womens">Women</a>
+        </li>
+        <li>
+          <a href="/mens">Men</a>
+        </li>
+        <li>
+          <a href="/kids">Kids</a>
+        </li>
+        <li>
+          <a href="/clearance">Clearance</a>
+        </li>
+        <li>
+          <a href="#">Hot &amp; Now</a>
+        </li>
+      </ul>
+    </nav>
   </div>
 </header>

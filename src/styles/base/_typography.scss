@@ -17,6 +17,20 @@
   font-weight: bold;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Verlag';
+  src: url('fonts/Verlag-Light.otf') format('opentype');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'VerlagBlack';
+  src: url('fonts/Verlag-Black.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 @font-face {
   font-family: 'VerlagCond';
@@ -34,6 +48,7 @@
 // Font families with fallbacks
 $Knockout: Knockout, Helvetica, Arial, sans-serif;
 $Verlag: Verlag, Helvetica, Arial, sans-serif;
+$VerlagBlack: VerlagBlack, Helvetica, Arial, sans-serif;
 $VerlagCond: VerlagCond, Helvetica, Arial, sans-serif;
 
 // Sizing titles/headline based on style guide
@@ -50,6 +65,6 @@ $fontSizeBodyBase: 18px;
 $fontSizeBodySmall: 16px;
 $fontSizeBodyMini: 12px;
 
-// Sizing discounts/pricing
+// Sizing discounts/pricing based on style guide
 $fontSizeDiscount: 22px;
 $fontSizePrice: 16px;

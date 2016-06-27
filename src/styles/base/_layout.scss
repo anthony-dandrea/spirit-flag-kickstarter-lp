@@ -2,10 +2,10 @@
 html {
   box-sizing: border-box;
   overflow-x: hidden;
+  font-family: $Verlag;
 }
 *, *:before, *:after {
   box-sizing: inherit;
-  font-family: $Verlag;
 }
 
 // Remove weird scroller
@@ -22,6 +22,7 @@ img {
 .refresh-container {
   max-width: $container;
   margin: auto;
+  padding: 0 1em;
 }
 
 // global body bg color

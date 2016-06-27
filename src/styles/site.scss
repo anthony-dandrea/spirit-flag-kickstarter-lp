@@ -1,7 +1,11 @@
 ///////////////////////////
 // Import libs
 ///////////////////////////
-@import 'normalize';
+// @import 'normalize';
+// import and use reset
+@import 'vendor/reset';
+@include meyer-reset();
+// Breakpoint for better media queries https://github.com/at-import/breakpoint
 @import 'breakpoint';
 
 ///////////////////////////

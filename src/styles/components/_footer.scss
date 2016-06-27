@@ -1,4 +1,4 @@
-$footer-brkpt: 650px;
+$footer-breakpoint: 650px;
 
 .footer-bg {
   background: $g_gray5;
@@ -6,14 +6,14 @@ $footer-brkpt: 650px;
 }
 
 .footer-top-links {
-  display: flex;
-  justify-content: space-between;
-  @include breakpoint(0px $footer-brkpt) {
-    flex-direction: column;
+  @include display-flex;
+  @include justify-content(space-between);
+  @include breakpoint(0px $footer-breakpoint) {
+    @include flex-direction(column);
   }
   > div, .footer-feedback {
     width: 100%;
-    @include breakpoint($footer-brkpt) {
+    @include breakpoint($footer-breakpoint) {
       width: 15%;
     }
     a {
