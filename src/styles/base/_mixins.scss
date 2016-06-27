@@ -1,21 +1,44 @@
-@mixin breakpoint($bk1, $bk2: false) {
-  @if $bk2 {
-    @media (max-width: #{$bk1}) and (min-width: #{$bk2}) { @content; }
-  } @else {
-    @media (max-width: #{$bk1}) { @content; }
-  }
+// make a circle
+@mixin circle($width, $color) {
+  width: $width;
+  height: $width;
+  background: $color;
+  -webkit-border-radius: $width/2;
+     -moz-border-radius: $width/2;
+          border-radius: $width/2;
 }
 
-@function stroke($stroke, $color) {
-  $shadow: ();
-  $from: $stroke*-1;
-  @for $i from $from through $stroke {
-   @for $j from $from through $stroke {
-      $shadow: append($shadow, $i*1px $j*1px 0 $color, comma);
+// vertically align without flexbox
+@mixin vertically-align() {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// Style placeholder text
+@mixin placeholder($color, $size:"") {
+  &::-webkit-input-placeholder {
+    color: $color;
+    @if $size != "" {
+      font-size: $size;
     }
   }
-  @return $shadow;
-}
-@mixin stroke($stroke, $color) {
-  text-shadow: stroke($stroke, $color);
+  &:-moz-placeholder {
+    color: $color;
+    @if $size != "" {
+      font-size: $size;
+    }
+  }
+  &::-moz-placeholder {
+    color: $color;
+    @if $size != "" {
+      font-size: $size;
+    }
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+    @if $size != "" {
+      font-size: $size;
+    }
+  }
 }

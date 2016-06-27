@@ -30,3 +30,26 @@
   font-weight: bold;
   font-style: normal;
 }
+
+// Font families with fallbacks
+$Knockout: Knockout, Helvetica, Arial, sans-serif;
+$Verlag: Verlag, Helvetica, Arial, sans-serif;
+$VerlagCond: VerlagCond, Helvetica, Arial, sans-serif;
+
+// Sizing titles/headline based on style guide
+$fontSizeHeadlineHuge: 48px;
+$fontSizeHeadlineLarge: 42px;
+$fontSizeHeadlineBase: 36px;
+$fontSizeHeadlineSmall: 30px;
+$fontSizeHeadlineMini: 24px;
+
+// Sizing body-text/subheads based on style guide
+$fontSizeBodyHuge: 24px;
+$fontSizeBodyLarge: 21px;
+$fontSizeBodyBase: 18px;
+$fontSizeBodySmall: 16px;
+$fontSizeBodyMini: 12px;
+
+// Sizing discounts/pricing
+$fontSizeDiscount: 22px;
+$fontSizePrice: 16px;

@@ -1,31 +1,42 @@
-.footer {
+$footer-brkpt: 650px;
+
+.footer-bg {
+  background: $g_gray5;
+  padding: 3em 0.5em;
+}
+
+.footer-top-links {
   display: flex;
   justify-content: space-between;
-  @include breakpoint($small) {
+  @include breakpoint(0px $footer-brkpt) {
     flex-direction: column;
   }
   > div, .footer-feedback {
-    width: 15%;
-    @include breakpoint($small) {
-      width: 100%;
+    width: 100%;
+    @include breakpoint($footer-brkpt) {
+      width: 15%;
     }
     a {
-    color: #000;
+    color: $g_black;
     display: block;
+    margin: 8px 0;
     text-decoration: none;
       &:hover {
-        color: lighten(#000, 15%);
+        text-decoration: underline;
+        color: lighten($g_black, 25%);
       }
     }
   }
   h5 {
-    margin: 0 0 5px 0;
+    font-family: $VerlagCond;
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
     font-size: 16px;
   }
   .footer-feedback {
     display: block;
     text-decoration: none;
-    color: #000;
+    color: $g_black;
     padding: 1em;
     &:hover {
       background: grey;
@@ -33,26 +44,33 @@
   }
 }
 .footer-feedback {
-  border: solid 1px #000;
+  border: solid 1px $g_black;
 }
 
 .footer-legal-links {
   text-align: center;
+  margin: 3em auto;
   a {
     text-decoration: none;
-    color: #000;
+    color: $g_black;
     display: inline-block;
     padding: 2px 10px;
-    margin: 3em 0;
-    border-right: solid 1px #000;
+    border-right: solid 1px $g_black;
     &:last-of-type {
       border-right: none;
+    }
+    &:hover {
+      text-decoration: underline;
+      color: lighten($g_black, 25%);
     }
   }
 }
 
-// see below for sprite
+// TODO see below for sprite
 // http://www.6pm.com/womens-shoes~1gp?s=recentSalesStyle/desc&pf_rd_r=1ZWHBDD1MQENEF3Y77VF&pf_rd_p=3f12ddc2-4664-4496-8e6e-d1b95bae2593
 .footer-bot-copy {
   text-align: center;
+  p {
+    margin: 10px auto;
+  }
 }

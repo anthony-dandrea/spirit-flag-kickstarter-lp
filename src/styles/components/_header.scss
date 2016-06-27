@@ -1,0 +1,23 @@
+.header-top {
+  display: flex;
+  .logo {
+    width: 14%;
+  }
+  .banner {
+    width: 40%;
+  }
+  .phone {
+    width: 23%;
+  }
+  .icons {
+    width: 23%;
+    a {
+      display: inline-block;
+      @include circle(30px, $g_black);
+      background-image: url('http://placehold.it/50x50');
+      background-repeat: no-repeat;
+      background-size: contain;
+      // background-position: TODO make sprites
+    }
+  }
+}
