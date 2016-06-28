@@ -66,52 +66,58 @@
 }
 
 .header-nav {
-  ul {
+  > ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
     @include display-flex;
     @include justify-content(space-between);
-  }
-  li {
-    > a {
-      color: $g_gray1;
-      font-family: $VerlagCond;
-      font-weight: bold;
-      text-decoration: none;
-      text-transform: uppercase;
-      display: block;
-      padding: 1em;
-      position: relative;
-    }
-    // default-show shows this nav item dropdown always
-    // unless another nav-item is hovered then it will be overlapped
-    &.default-show a:after,
-    &:hover a:after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 0;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-top: 10px solid $g_white;
-      left: calc(50% - 10px);
-      top: 100%;
-      position: absolute;
-      z-index: 5;
-    }
-    &.default-show .header-dropdown,
-    &:hover .header-dropdown {
-      display: block;
-    }
-    // fix z-index for default-show on search dropdown
-    // this way it wont always show it's arrow when hovering other
-    // nav items
-    &.default-show a:after {
-      z-index: 3;
-    }
-    &.default-show .header-dropdown {
-      z-index: 2
+    > li {
+      // This extends the list-items to fill in their
+      // respective space-between each other
+      // semi-sucks because all list-items will become the
+      // same size regardless of content =-/
+      @include flex(1);
+      text-align: center;
+      > a {
+        color: $g_gray1;
+        font-family: $VerlagCond;
+        font-weight: bold;
+        text-decoration: none;
+        text-transform: uppercase;
+        display: block;
+        padding: 1em;
+        position: relative;
+      }
+      // default-show shows this nav item dropdown always
+      // unless another nav-item is hovered then it will be overlapped
+      &.default-show a:after,
+      &:hover:not(.no-menu) a:after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid $g_white;
+        left: calc(50% - 10px);
+        top: 100%;
+        position: absolute;
+        z-index: 5;
+      }
+      &.default-show .header-dropdown,
+      &:hover .header-dropdown {
+        display: block;
+      }
+      // fix z-index for default-show on search dropdown
+      // this way it wont always show it's arrow when hovering other
+      // nav items
+      &.default-show a:after {
+        z-index: 3;
+      }
+      &.default-show .header-dropdown {
+        z-index: 2
+      }
     }
   }
 }
@@ -127,7 +133,8 @@
   left: 0;
   background: $g_gray5;
   z-index: 4;
-  @include box-shadow(0px 10px 20px 0px rgba(179,179,179,1));
+  text-align: left;
+  @include box-shadow(0px 10px 20px -10px rgba(179,179,179,1));
 }
 
 .nav-search-form {
@@ -141,6 +148,8 @@
   }
   [type="search"] {
     font-size: $fontSizeBodyHuge;
+    font-family: $Verlag;
+    font-weight: normal;
     border: none;
     background: transparent;
     width: 90%;
@@ -148,5 +157,32 @@
   input:focus,
   button:focus {
     outline: none;
+  }
+}
+
+.header-sub-nav {
+  @include display-flex;
+  .lists {
+    width: 67%;
+    @include display-flex;
+    @include flex-wrap(wrap);
+    > div {
+      margin: 0.5em 1em;
+    }
+    h5 {
+      color: $g_black;
+    }
+    a {
+      color: $g_black;
+      text-decoration: none;
+      margin-bottom: 0.5em;
+      display: block;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .list-image {
+    width: 33%;
   }
 }
