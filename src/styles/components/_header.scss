@@ -9,11 +9,11 @@
 .header-top {
   @include display-flex;
   .logo {
-    width: 27%;
+    width: 23%;
   }
   .banner {
     text-align: center;
-    width: 27%;
+    width: 31%;
     font-weight: bold;
     @include display-flex;
     @include justify-content(center);
@@ -21,6 +21,11 @@
     font-size: $fontSizeBodyBase;
     .red {
       color: $g_red;
+    }
+    a {
+      font-weight: normal;
+      color: $g_black;
+      font-size: $fontSizeBodySmall;
     }
   }
   .phone-callout {
@@ -93,6 +98,7 @@
       // unless another nav-item is hovered then it will be overlapped
       &.default-show a:after,
       &:hover:not(.no-menu) a:after {
+        // css trianlge top layer
         content: '';
         display: block;
         width: 0;
@@ -103,7 +109,22 @@
         left: calc(50% - 10px);
         top: 100%;
         position: absolute;
-        z-index: 5;
+        z-index: 7;
+      }
+      &.default-show a:before,
+      &:hover:not(.no-menu) a:before {
+        // css trianlge bottom layer
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 11px solid transparent;
+        border-right: 11px solid transparent;
+        border-top: 11px solid $g_gray4;
+        left: calc(50% - 11px);
+        top: 100%;
+        position: absolute;
+        z-index: 6;
       }
       &.default-show .header-dropdown,
       &:hover .header-dropdown {
@@ -113,6 +134,9 @@
       // this way it wont always show it's arrow when hovering other
       // nav items
       &.default-show a:after {
+        z-index: 4;
+      }
+      &.default-show a:before {
         z-index: 3;
       }
       &.default-show .header-dropdown {
@@ -132,7 +156,7 @@
   width: 100%;
   left: 0;
   background: $g_gray5;
-  z-index: 4;
+  z-index: 5;
   text-align: left;
   @include box-shadow(0px 10px 20px -10px rgba(179,179,179,1));
 }
@@ -167,12 +191,10 @@
     @include display-flex;
     @include flex-wrap(wrap);
     > div {
-      margin: 0.5em 1em;
-    }
-    h5 {
-      color: $g_black;
+      margin: 0.5em 2em;
     }
     a {
+      font-size: $fontSizeBodySmall;
       color: $g_black;
       text-decoration: none;
       margin-bottom: 0.5em;
