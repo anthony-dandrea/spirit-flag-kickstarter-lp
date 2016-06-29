@@ -8,12 +8,13 @@
 
 .header-top {
   @include display-flex;
+  padding: 1em 0;
   .logo {
-    width: 23%;
+    width: 20%;
   }
   .banner {
     text-align: center;
-    width: 31%;
+    width: 34%;
     font-weight: bold;
     @include display-flex;
     @include justify-content(center);
@@ -59,14 +60,35 @@
     @include display-flex;
     @include align-items(center);
     @include justify-content(flex-end);
-    a {
-      display: inline-block;
-      @include circle(30px, $g_black);
-      background-image: url('http://placehold.it/50x50');
-      background-repeat: no-repeat;
-      background-size: contain;
-      // background-position: TODO make sprites
+    > div {
+      margin: 0 1em;
+      position: relative;
+      &:hover ul {
+        display: block;
+      }
+      > a {
+        display: inline-block;
+        @include circle(30px, $g_black);
+      }
     }
+    ul {
+      display: none;
+      min-width: 200px;
+      left: -100px;
+      top: 100%;
+      position: absolute;
+      background: $g_white;
+      border: solid 1px $g_gray4;
+      @include border-radius(4px);
+    }
+    // a {
+    //   display: inline-block;
+    //   @include circle(30px, $g_black);
+    //   background-image: url('http://placehold.it/50x50');
+    //   background-repeat: no-repeat;
+    //   background-size: contain;
+    //   // background-position: TODO make sprites
+    // }
   }
 }
 
@@ -82,11 +104,12 @@
       // respective space-between each other
       // semi-sucks because all list-items will become the
       // same size regardless of content =-/
-      @include flex(1);
-      text-align: center;
+      // @include flex(1);
+      // text-align: center;
       > a {
         color: $g_gray1;
-        font-family: $VerlagCond;
+        font-family: $Knockout;
+        letter-spacing: 2px;
         font-weight: bold;
         text-decoration: none;
         text-transform: uppercase;
@@ -99,13 +122,9 @@
       &.default-show a:after,
       &:hover:not(.no-menu) a:after {
         // css trianlge top layer
-        content: '';
         display: block;
-        width: 0;
-        height: 0;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-top: 10px solid $g_white;
+        content: '';
+        @include triangle(20px, $g_white, down);
         left: calc(50% - 10px);
         top: 100%;
         position: absolute;
@@ -114,13 +133,9 @@
       &.default-show a:before,
       &:hover:not(.no-menu) a:before {
         // css trianlge bottom layer
-        content: '';
         display: block;
-        width: 0;
-        height: 0;
-        border-left: 11px solid transparent;
-        border-right: 11px solid transparent;
-        border-top: 11px solid $g_gray4;
+        content: '';
+        @include triangle(22px, $g_gray4, down);
         left: calc(50% - 11px);
         top: 100%;
         position: absolute;
@@ -171,6 +186,7 @@
     color: $g_gray2;
   }
   [type="search"] {
+    -webkit-appearance: none; // safari sucks
     font-size: $fontSizeBodyHuge;
     font-family: $Verlag;
     font-weight: normal;
