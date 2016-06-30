@@ -307,3 +307,13 @@
   -ms-align-self: $value;
   align-self: $value;
 }
+
+@mixin device-pixel-ratio($pixel-ratio) {
+  @media
+    only screen and (-webkit-min-device-pixel-ratio: $pixel-ratio),
+    only screen and (   min--moz-device-pixel-ratio: $pixel-ratio),
+    only screen and (        min-device-pixel-ratio: $pixel-ratio),
+    only screen and (                min-resolution: $pixel-ratio+dppx) {
+      @content;
+  }
+}

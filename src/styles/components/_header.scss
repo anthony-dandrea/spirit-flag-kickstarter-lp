@@ -61,34 +61,60 @@
     @include align-items(center);
     @include justify-content(flex-end);
     > div {
-      margin: 0 1em;
+      margin: 0 7px;
       position: relative;
       &:hover ul {
         display: block;
       }
       > a {
         display: inline-block;
-        @include circle(30px, $g_black);
       }
     }
     ul {
       display: none;
-      min-width: 200px;
-      left: -100px;
-      top: 100%;
+      width: 200px;
+      left: -86px;
+      top: 130%;
       position: absolute;
       background: $g_white;
+      z-index: 7;
       border: solid 1px $g_gray4;
       @include border-radius(4px);
     }
-    // a {
-    //   display: inline-block;
-    //   @include circle(30px, $g_black);
-    //   background-image: url('http://placehold.it/50x50');
-    //   background-repeat: no-repeat;
-    //   background-size: contain;
-    //   // background-position: TODO make sprites
-    // }
+    .icon-dropdown .name,
+    .icon-dropdown li a {
+      display: block;
+      padding: 0.75em 1em;
+    }
+    .icon-dropdown li {
+      border-bottom: solid 1px $g_gray4;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+    .icon-dropdown ul {
+      &:after {
+        display: block;
+        content: '';
+        @include triangle(20px, $g_white, up);
+        left: calc(50% - 10px);
+        bottom: 100%;
+        z-index: 8;
+        position: absolute;
+      }
+      &::before {
+        display: block;
+        content: '';
+        @include triangle(22px, $g_gray4, up);
+        left: calc(50% - 11px);
+        bottom: 100%;
+        position: absolute;
+      }
+    }
+    .name {
+      color: $g_gray2;
+      text-align: center;
+    }
   }
 }
 

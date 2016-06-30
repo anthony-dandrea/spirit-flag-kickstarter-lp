@@ -1,0 +1,94 @@
+// icons sprite
+// http://www.retinaspritegenerator.com/
+/*
+  Example:
+  <div class="icons-sprite-account"></div>
+  <div class="icons-sprite-bag"></div>
+*/
+%icons-sprite {
+  background-image: url('/images/icons-sprite-1x.png');
+}
+@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
+  %icons-sprite {
+     background-image: url('/images/icons-sprite-2x.png');
+     background-size: 441px 28px;
+  }
+}
+
+.icon-cards {
+	@extend %icons-sprite;
+	width: 173px;
+	height: 25px;
+	background-position: 0 0;
+	margin: 1em auto 3em auto;
+}
+
+.icon-account {
+	@extend %icons-sprite;
+	width: 28px;
+	height: 28px;
+	background-position: -173px 0;
+}
+
+.icon-bag {
+	@extend %icons-sprite;
+	width: 28px;
+	height: 28px;
+	background-position: -201px 0;
+}
+
+.icon-facebook {
+	@extend %icons-sprite;
+	width: 26px;
+	height: 26px;
+	background-position: -229px 0;
+}
+
+.icon-heart {
+	@extend %icons-sprite;
+	width: 28px;
+	height: 28px;
+	background-position: -255px 0;
+}
+
+.icon-help {
+	@extend %icons-sprite;
+	width: 28px;
+	height: 28px;
+	background-position: -283px 0;
+}
+
+.icon-instagram {
+	@extend %icons-sprite;
+	width: 26px;
+	height: 26px;
+	background-position: -311px 0;
+}
+
+.icon-pinterest {
+	@extend %icons-sprite;
+	width: 26px;
+	height: 26px;
+	background-position: -337px 0;
+}
+
+.icon-search {
+	@extend %icons-sprite;
+	width: 26px;
+	height: 26px;
+	background-position: -363px 0;
+}
+
+.icon-twitter {
+	@extend %icons-sprite;
+	width: 26px;
+	height: 26px;
+	background-position: -389px 0;
+}
+
+.icon-youtube {
+	@extend %icons-sprite;
+	width: 26px;
+	height: 26px;
+	background-position: -415px 0;
+}

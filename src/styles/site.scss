@@ -7,6 +7,10 @@
 @include meyer-reset();
 // Breakpoint for better media queries https://github.com/at-import/breakpoint
 @import 'breakpoint';
+///////////////////////////
+// Import sprites
+///////////////////////////
+@import 'sprites/icons';
 
 ///////////////////////////
 // Import base
